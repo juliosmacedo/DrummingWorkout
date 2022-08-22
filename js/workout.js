@@ -1,5 +1,5 @@
 class Workout {
-    constructor({time, activity, date}) {
+    constructor({time, bpm, activity, date}) {
         const formatDate = date.replace(/\-/g, '/');
         const dateOptions = {
            day: "2-digit",
@@ -8,7 +8,8 @@ class Workout {
         };
 
         this.time = time;
+        this.bpm = bpm;
         this.activity = activity;
-        this.date = new Date(formatDate).toLocaleDateString('en-GB', dateOptions);
+        this.date = new Date(formatDate).toLocaleDateString();
     }
 }

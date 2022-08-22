@@ -66,11 +66,16 @@ tr:nth-child(even) {
    color: white;
 }
 
+
 .label-rudiment, .label-date {
-    margin-left: 15px;
+    margin-left: 25px;
 }
 
 .time-input{
+    width: 30px;
+}
+
+.bpm-input{
     width: 30px;
 }
 

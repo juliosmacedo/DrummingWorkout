@@ -2,12 +2,13 @@
     let totalMinutes = 0;
 
     const addActivity = (event) => {
-        const [time, activity, date] = document.getElementsByClassName("data");
+        const [time, bpm, activity, date] = document.getElementsByClassName("data");
 
         if (time.checkValidity() && date.checkValidity()) {
             event.preventDefault();
             const workoutDetais = {
                 time: time.value,
+                bpm: bpm.value,
                 activity: activity.value,
                 date: date.value
             };
@@ -48,14 +49,15 @@
         btnDelete.className = "btn-delete";
         btnDelete.appendChild(document.createTextNode("-"));
 
-        for (let i = 0; i < 4; i++) {
+        for (let i = 0; i < 6; i++) {
             cell.push(row.insertCell(i));
         }
 
         cell[0].innerHTML = `${workout.time} mins`;
-        cell[1].innerHTML = workout.activity;
-        cell[2].innerHTML = workout.date;
-        cell[3].appendChild(btnDelete);
+        cell[1].innerHTML = `${workout.bpm}`;
+        cell[2].innerHTML = workout.activity;
+        cell[3].innerHTML = workout.date;
+        cell[4].appendChild(btnDelete);
     };
 
     const deleteWorkout = (event) => {
